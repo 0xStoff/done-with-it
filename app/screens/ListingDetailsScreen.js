@@ -1,20 +1,29 @@
-import { View, Text, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  KeyboardAvoidingView,
+  ScrollView,
+} from "react-native";
 import React from "react";
 import AppText from "../components/AppText";
 import colors from "../config/config.js";
 import ListItem from "../components/ListItem";
 
 import { Image } from "react-native-expo-image-cache";
+import ContactSellerForm from "../components/ContactSellerForm";
 
 export default function ListingDetailsScreen({ route }) {
   const listing = route.params;
 
   return (
-    <View>
+    <ScrollView>
       <Image
         style={styles.image}
         uri={listing.images[0].url}
+        source={{ uri: listing.images[0].url }}
         preview={{ uri: listing.images[0].thumbnailUrl }}
+        tint="light"
       />
       <View style={styles.detailsContainer}>
         <AppText style={styles.title}>{listing.title}</AppText>
@@ -27,7 +36,8 @@ export default function ListingDetailsScreen({ route }) {
           subTitle="5 Listings"
         />
       </View>
-    </View>
+      <ContactSellerForm listing={listing} />
+    </ScrollView>
   );
 }
 const styles = StyleSheet.create({

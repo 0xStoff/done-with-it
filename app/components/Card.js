@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
+import { Text, View, StyleSheet, TouchableOpacity, Image } from "react-native";
 import colors from "../config/config.js";
-import { Image } from "react-native-expo-image-cache";
+import { Image as ImageCache } from "react-native-expo-image-cache";
 
 export default function Card({
   title,
@@ -13,9 +13,10 @@ export default function Card({
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={styles.container}>
-        <Image
+        <ImageCache
           style={styles.image}
           uri={imageUrl}
+          source={{ uri: imageUrl }}
           preview={thumbnailUrl}
           tint="light"
         />

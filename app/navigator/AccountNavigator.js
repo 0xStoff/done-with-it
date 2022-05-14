@@ -1,19 +1,7 @@
 import React from "react";
 
-import {
-  WelcomeScreen,
-  LoginScreen,
-  RegisterScreen,
-  ListingDetailsScreen,
-  ListingsScreen,
-  AccountScreen,
-  MessagesScreen,
-} from "../screens";
-import { NavigationContainer } from "@react-navigation/native";
-import {
-  createStackNavigator,
-  TransitionPresets,
-} from "@react-navigation/stack";
+import { AccountScreen, MessagesScreen } from "../screens";
+import { createStackNavigator } from "@react-navigation/stack";
 
 const Stack = createStackNavigator();
 

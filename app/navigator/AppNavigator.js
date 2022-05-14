@@ -6,10 +6,13 @@ import FeedNavigator from "./FeedNavigator";
 import AccountNavigator from "./AccountNavigator";
 import NewListingButton from "./NewListingButton";
 import routes from "../navigator/Routes";
+import useNotifications from "../hooks/useNotifications";
+import navigation from "../navigator/RootNavigation";
 
 const Tab = createBottomTabNavigator();
 
 export default function AppNavigator() {
+  useNotifications(() => navigation.navigate("Account"));
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }}>
       <Tab.Screen

@@ -3,14 +3,7 @@ import React from "react";
 //   createNativeStackNavigator,
 //   TransitionPresets,
 // } from "@react-navigation/native-stack";
-import {
-  WelcomeScreen,
-  LoginScreen,
-  RegisterScreen,
-  ListingDetailsScreen,
-  ListingsScreen,
-} from "../screens";
-import { NavigationContainer } from "@react-navigation/native";
+import { ListingDetailsScreen, ListingsScreen } from "../screens";
 import {
   createStackNavigator,
   TransitionPresets,
